@@ -1,10 +1,12 @@
+import { CACHE_MAX_CAPACITY } from '../config/serverConfig.mjs';
+
 export class LRUCache {
     constructor() {
-        this.max = 2;
+        this.max = CACHE_MAX_CAPACITY;
         this.cacheStorage = new Map();
     }
 
-    get(key) {
+    getValue(key) {
         let value = this.cacheStorage.get(key);
         if (value) {
             this.cacheStorage.delete(key);
@@ -13,7 +15,7 @@ export class LRUCache {
         return value;
     }
 
-    set(key, value) {
+    setValue(key, value) {
         if (this.cacheStorage.has(key)) {
             this.cacheStorage.delete(key);
         }

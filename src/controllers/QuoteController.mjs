@@ -18,7 +18,7 @@ export class QuoteController {
                 });
             }
 
-            const response = await this.quoteService.fetchCurrencies(base_currency, quote_currency, base_amount);
+            const response = await this.quoteService.getConvertedAmount(base_currency, quote_currency, base_amount);
 
             return res.status(STATUS_CODES.SUCCESS).json(response);
         }

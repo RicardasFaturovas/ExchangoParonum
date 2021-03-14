@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.mjs",
   "scripts": {
-    "dev": "nodemon src/server.mjs"
+    "dev": "nodemon src/server.mjs",
+    "test": "jasmine"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "eslint": "^7.21.0",
+    "jasmine": "^3.6.4",
     "nodemon": "^2.0.7"
   }
 }
