@@ -2,7 +2,7 @@
   "name": "currency-exchange",
   "version": "1.0.0",
   "description": "",
-  "main": "server.mjs",
+  "main": "src/server.mjs",
   "scripts": {
     "dev": "nodemon src/server.mjs",
     "test": "jasmine"

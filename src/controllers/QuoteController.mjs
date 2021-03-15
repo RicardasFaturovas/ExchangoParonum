@@ -14,7 +14,7 @@ export class QuoteController {
             if (!validationResult.isValid) {
                 return res.status(STATUS_CODES.BAD_REQUEST).json({
                     statusCode: STATUS_CODES.BAD_REQUEST,
-                    message: validationResult.message
+                    messages: validationResult.errorMessages
                 });
             }
 

@@ -31,9 +31,9 @@ describe('QuoteController', () => {
         it('should return bad request response when incorrect query params are passed', async () => {
             const badRequestResult = {
                 statusCode: STATUS_CODES.BAD_REQUEST,
-                message: 'test'
+                messages: ['test']
             };
-            quoteQueryValidator.validateQueryParams.and.returnValue({ isValid: false, message: 'test' });
+            quoteQueryValidator.validateQueryParams.and.returnValue({ isValid: false, errorMessages: ['test'] });
 
             await quoteController.getCurrencies({ query : {} }, res);
 

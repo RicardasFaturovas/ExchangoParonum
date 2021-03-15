@@ -3,15 +3,22 @@ export class QuoteService {
         this.cache = cache;
         this.currencyExchangeService = currencyExchangeService;
     }
+
+    async getCurrencyRates(baseCurrency, quoteCurrency) {
+        let currencyRates = this.cache.getValue(baseCurrency);
+        if (!currencyRates) {
+            const response = await this.currencyExchangeService.fetchCurrencies(baseCurrency, quoteCurrency);
+            currencyRates = await response.json();
+
+            this.cache.setValue(baseCurrency, currencyRates);
+        }
+
+        return currencyRates;
+    }
+
     async getConvertedAmount(baseCurrency, quoteCurrency, baseAmount) {
         try {
-            let currencyRates = this.cache.getValue(baseCurrency);
-            if (!currencyRates) {
-                const response = await this.currencyExchangeService.fetchCurrencies(baseCurrency, quoteCurrency);
-                currencyRates = await response.json();
-
-                this.cache.setValue(baseCurrency, currencyRates);
-            }
+            const currencyRates = await this.getCurrencyRates(baseCurrency, quoteCurrency);
             const quoteCurrencyRate = currencyRates.rates[quoteCurrency];
             const quoteAmount = Math.round(baseAmount * quoteCurrencyRate);
             const roundedQuoteCurrencyRate = parseFloat(quoteCurrencyRate.toFixed(3));
