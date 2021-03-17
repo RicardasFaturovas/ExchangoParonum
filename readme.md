@@ -14,7 +14,7 @@ Api to be used to convert amounts between different currencies using a 3rd party
 npm install
 ```
 
-### Executing program
+### Launchin API
 
 ```
 npm run dev

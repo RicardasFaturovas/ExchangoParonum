@@ -20,12 +20,12 @@ export class LRUCache {
             this.cacheStorage.delete(key);
         }
         else if (this.cacheStorage.size == this.max) {
-            this.cacheStorage.delete(this.getFirst());
+            this.cacheStorage.delete(this.getFirstValue());
         }
         this.cacheStorage.set(key, value);
     }
 
-    getFirst() {
+    getFirstValue() {
         return this.cacheStorage.keys().next().value;
     }
 }
