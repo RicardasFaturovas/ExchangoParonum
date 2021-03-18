@@ -44,7 +44,7 @@ describe('QuoteController', () => {
         it('should return server error response when quote service fails to retrieve data', async () => {
             const serverErrorResult = {
                 statusCode: STATUS_CODES.SERVER_ERROR,
-                message: 'test error'
+                messages: ['test error']
             };
             quoteService.getConvertedAmount.and.returnValue(Promise.reject('test error'));
             quoteQueryValidator.validateQueryParams.and.returnValue({ isValid: true });

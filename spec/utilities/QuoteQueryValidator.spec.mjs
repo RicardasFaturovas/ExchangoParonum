@@ -24,6 +24,11 @@ describe('QuoteQueryValidator', () => {
                 queryParams: { base_currency: 'EUR', quote_currency: 'CAD', base_amount: '1' },
                 messages: [ ERROR_MESSAGES.UNSUPPORTED_QUOTE_CURRENCY ],
                 case: 'provided quote currency is not supported'
+            },
+            {
+                queryParams: { base_currency: 'test', quote_currency: 'test', base_amount: 'test' },
+                messages: [ ERROR_MESSAGES.INVALID_INT_PARAM, ERROR_MESSAGES.UNSUPPORTED_BASE_CURRENCY, ERROR_MESSAGES.UNSUPPORTED_QUOTE_CURRENCY ],
+                case: 'when multiple params are incorrect'
             }
         ];
 
@@ -34,15 +39,6 @@ describe('QuoteQueryValidator', () => {
                     isValid: false,
                     errorMessages: testCase.messages
                 });
-            });
-        });
-
-        it('Should set validation result as invalid and set multiple error messages when multiple params are incorrect', () => {
-            const queryParams = { base_currency: 'test', quote_currency: 'test', base_amount: 'test' };
-            const result = quoteQueryValidator.validateQueryParams(queryParams);
-            expect(result).toEqual({
-                isValid: false,
-                errorMessages: [ ERROR_MESSAGES.INVALID_INT_PARAM, ERROR_MESSAGES.UNSUPPORTED_BASE_CURRENCY, ERROR_MESSAGES.UNSUPPORTED_QUOTE_CURRENCY ]
             });
         });
     });

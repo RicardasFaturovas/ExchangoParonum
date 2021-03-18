@@ -25,7 +25,7 @@ export class QuoteController {
         catch(error) {
            res.status(STATUS_CODES.SERVER_ERROR).json({
                statusCode: STATUS_CODES.SERVER_ERROR,
-               message: error
+               messages: [error]
            });
         }
     }
