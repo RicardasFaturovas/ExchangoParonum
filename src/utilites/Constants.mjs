@@ -11,7 +11,8 @@ export const ERROR_MESSAGES = {
     INVALID_INT_PARAM: 'The provided value is not a valid integer',
     UNSUPPORTED_BASE_CURRENCY: 'The provided base currency is unsupported',
     UNSUPPORTED_QUOTE_CURRENCY: 'The provided quote currency is unsupported',
-    NOT_FOUND: 'Unable to find requested resource'
+    NOT_FOUND: 'Unable to find requested resource',
+    EXTERNAL_API_ERROR: 'External API error'
 };
 
 export const VALID_CURRENCIES = ['USD','EUR','GBP','ILS'];

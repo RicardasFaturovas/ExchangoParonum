@@ -35,6 +35,7 @@ describe('QuoteQueryValidator', () => {
         invalidQueryParamTestCases.forEach((testCase) => {
             it(`Should set validation result as invalid and set appropriate error messages when ${testCase.case}`, () => {
                 const result = quoteQueryValidator.validateQueryParams(testCase.queryParams);
+
                 expect(result).toEqual({
                     isValid: false,
                     errorMessages: testCase.messages
