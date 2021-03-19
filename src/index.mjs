@@ -2,7 +2,7 @@ import express from 'express';
 import quoteRouter from './routes/QuoteRoute.mjs';
 import swaggerUi from 'swagger-ui-express';
 import swaggerConfig from '../swagger.mjs';
-import { STATUS_CODES, ERROR_MESSAGES } from './utilites/Constants.mjs';
+import { STATUS_CODES, ERROR_MESSAGES } from './utilities/Constants.mjs';
 
 const app = express();
 

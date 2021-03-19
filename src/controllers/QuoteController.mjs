@@ -1,4 +1,4 @@
-import { STATUS_CODES } from '../utilites/Constants.mjs';
+import { STATUS_CODES } from '../utilities/Constants.mjs';
 
 export class QuoteController {
     constructor(quoteService, quoteQueryValidator) {

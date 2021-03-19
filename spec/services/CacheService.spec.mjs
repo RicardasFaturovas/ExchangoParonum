@@ -1,6 +1,6 @@
 import { LRUCache } from '../../src/services/CacheService.mjs';
 
-describe('CachceService', () => {
+describe('CacheService', () => {
     let lruCache;
 
     beforeEach(() => {

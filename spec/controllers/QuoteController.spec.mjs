@@ -1,5 +1,5 @@
 import { QuoteController } from '../../src/controllers/QuoteController.mjs';
-import { STATUS_CODES } from '../../src/utilites/constants.mjs';
+import { STATUS_CODES } from '../../src/utilities/constants.mjs';
 
 describe('QuoteController', () => {
     let quoteService;

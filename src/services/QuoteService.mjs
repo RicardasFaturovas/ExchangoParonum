@@ -1,5 +1,5 @@
-import { STATUS_CODES } from '../utilites/Constants.mjs';
-import { ExternalAPIError } from '../utilites/ExtrenalAPIError.mjs';
+import { STATUS_CODES } from '../utilities/Constants.mjs';
+import { ExternalAPIError } from '../utilities/ExternalAPIError.mjs';
 
 export class QuoteService {
     constructor(cache, currencyExchangeService) {

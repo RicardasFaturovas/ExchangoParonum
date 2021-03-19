@@ -1,5 +1,5 @@
 import { QuoteService } from '../../src/services/QuoteService.mjs';
-import { STATUS_CODES } from '../../src/utilites/constants.mjs';
+import { STATUS_CODES } from '../../src/utilities/constants.mjs';
 
 describe('QuoteService', () => {
     let cache;
@@ -15,7 +15,7 @@ describe('QuoteService', () => {
     describe('getConvertedAmount', () => {
         const rates = { rates: { EUR: 1 } };
 
-        it('should get currency exhcnages value from cache if it exists', () => {
+        it('should get currency exchanges value from cache if it exists', () => {
             cache.getValue.and.returnValue(rates);
 
             quoteService.getConvertedAmount('USD', 'EUR', 1);
@@ -23,7 +23,7 @@ describe('QuoteService', () => {
             expect(currencyExchangeService.fetchCurrencies).not.toHaveBeenCalled();
         });
 
-        it('should get currency exhcnages value from external api and set value to cache if response is successful', () => {
+        it('should get currency exchanges value from external api and set value to cache if response is successful', () => {
             cache.getValue.and.returnValue(undefined);
             currencyExchangeService.fetchCurrencies.and.returnValue(Promise.resolve({ json: () => rates, status: 200 }));
 

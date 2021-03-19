@@ -4,7 +4,7 @@ import { QuoteController } from '../controllers/QuoteController.mjs';
 import { LRUCache } from '../services/CacheService.mjs';
 import { CurrencyExchangeService } from '../services/CurrencyExchangeService.mjs';
 import { QuoteService } from '../services/QuoteService.mjs';
-import { QuoteQueryValidator } from '../utilites/QuoteQueryValidator.mjs';
+import { QuoteQueryValidator } from '../utilities/QuoteQueryValidator.mjs';
 
 const quoteRouter = Router();
 const lruCache = new LRUCache();

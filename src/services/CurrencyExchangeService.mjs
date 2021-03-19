@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { BASE_CURRENCY_EXCHANGE_API_URL } from '../utilites/constants.mjs';
+import { BASE_CURRENCY_EXCHANGE_API_URL } from '../utilities/constants.mjs';
 
 export class CurrencyExchangeService {
     async fetchCurrencies(baseCurrency, quoteCurrency) {

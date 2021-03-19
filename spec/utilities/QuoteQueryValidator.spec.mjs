@@ -1,5 +1,5 @@
-import { QuoteQueryValidator } from '../../src/utilites/quoteQueryValidator.mjs';
-import { ERROR_MESSAGES } from '../../src/utilites/Constants.mjs';
+import { QuoteQueryValidator } from '../../src/utilities/quoteQueryValidator.mjs';
+import { ERROR_MESSAGES } from '../../src/utilities/Constants.mjs';
 
 describe('QuoteQueryValidator', () => {
     let quoteQueryValidator;
