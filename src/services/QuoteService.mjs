@@ -11,13 +11,13 @@ export class QuoteService {
         let currencyRates = this.cache.getValue(baseCurrency);
         if (!currencyRates) {
             const response = await this.currencyExchangeService.fetchCurrencies(baseCurrency, quoteCurrency);
-            const parsedRepsonse = await response.json();
+            const parsedResponse = await response.json();
             const status = response.status;
             if (status === STATUS_CODES.SUCCESS ) {
-                currencyRates = parsedRepsonse;
+                currencyRates = parsedResponse;
                 this.cache.setValue(baseCurrency, currencyRates);
             } else {
-                throw new ExternalAPIError(status, parsedRepsonse.error);
+                throw new ExternalAPIError(status, parsedResponse.error);
             }
         }
 

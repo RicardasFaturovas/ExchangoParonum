@@ -4,7 +4,7 @@ export default {
     'swagger': '2.0',
     'info': {
         'version': '1.0.0',
-        'title': 'Currency exhange api',
+        'title': 'Currency exchange api',
         'description': 'API providing functionality convert amount between several different currencies',
         'license': {
             'name': 'MIT',
@@ -133,7 +133,7 @@ export default {
     'tags': [
         {
             'name': 'Quote',
-            'description': 'API to get converted amounts based on exhange rates'
+            'description': 'API to get converted amounts based on exchange rates'
         }
     ],
     'schemes': [
