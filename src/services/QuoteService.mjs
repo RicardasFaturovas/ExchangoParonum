@@ -7,10 +7,10 @@ export class QuoteService {
         this.currencyExchangeService = currencyExchangeService;
     }
 
-    async getCurrencyRates(baseCurrency, quoteCurrency) {
+    async getCurrencyRates(baseCurrency) {
         let currencyRates = this.cache.getValue(baseCurrency);
         if (!currencyRates) {
-            const response = await this.currencyExchangeService.fetchCurrencies(baseCurrency, quoteCurrency);
+            const response = await this.currencyExchangeService.fetchCurrencies(baseCurrency);
             const parsedResponse = await response.json();
             const status = response.status;
             if (status === STATUS_CODES.SUCCESS ) {

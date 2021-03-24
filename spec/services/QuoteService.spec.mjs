@@ -29,7 +29,7 @@ describe('QuoteService', () => {
 
             quoteService.getConvertedAmount('USD', 'EUR', 1);
 
-            expect(currencyExchangeService.fetchCurrencies).toHaveBeenCalledWith('USD', 'EUR');
+            expect(currencyExchangeService.fetchCurrencies).toHaveBeenCalledWith('USD');
         });
 
         it('should respond with external API error when external api response is not successful', async () => {
