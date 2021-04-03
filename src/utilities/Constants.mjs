@@ -1,4 +1,4 @@
-export const BASE_CURRENCY_EXCHANGE_API_URL = 'https://api.exchangeratesapi.io/latest';
+export const BASE_CURRENCY_EXCHANGE_API_URL = 'http://api.exchangeratesapi.io/latest';
 
 export const STATUS_CODES = {
     SUCCESS: 200,
